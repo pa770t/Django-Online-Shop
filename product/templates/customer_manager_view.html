@@ -1,0 +1,19 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container px-4">
+        <h2 class="pb-2 border-bottom">Total Customers ({{ total }})</h2>
+
+        <div class="ml-5 row px-xl-5 pt-3">
+            {% for customer in customers %}
+                <a href="{% url 'only_customer_manager_view' customer.id %}" class="col-lg-5 col-md-3 col-sm-12 pb-1 bg-light text-center m-1 text-decoration-none">
+                    <img style="border-radius: 50%; width: 50px; height: 50px;" src="/{{ customer.profile_image }}" alt="{{ customer }}" class="m-2">
+                    <h5 class="font-weight-semi-bold m-0">{{ customer }}</h5>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container px-4">
+    <h2 class="pb-2 border-bottom">Total Orders</h2>
+
+    <div class="row px-xl-5 pt-3">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="{% url 'product_manager_view' %}" class="d-flex justify-content-center align-items-center bg-light mb-4 text-decoration-none pt-4">
+                <h1 class="fa fa-map text-primary mr-3"></h1>
+                <h5 class="font-weight-semi-bold">Total Products
+                    <p class="text-center mt-2">{{ total_product }}</p>
+                </h5>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="{% url 'order_manager_view' %}" class="d-flex justify-content-center align-items-center bg-light mb-4 text-decoration-none pt-4">
+                <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                <h5 class="font-weight-semi-bold m-0">Total Orders
+                    <p class="text-center mt-2">{{ total_order }}</p>
+                </h5>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="{% url 'customer_manager_view' %}" class="d-flex justify-content-center align-items-center bg-light mb-4 text-decoration-none pt-4">
+                <h1 class="fas fa-user-tie text-primary m-0 mr-3"><i class=""></i></h1>
+                <h5 class="font-weight-semi-bold m-0">Total Customers
+                    <p class="text-center mt-2">{{ total_customer }}</p>
+                </h5>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
